@@ -10,6 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.view.View.OnClickListener;
+import android.app.Activity;
+import android.text.Editable;
+
 
 public class MainForm extends AppCompatActivity {
 
@@ -28,6 +33,45 @@ public class MainForm extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+
+        // Importing Edit Text for edittext classes
+        final EditText FirstName = (EditText) findViewById(R.id.firstname);
+        final EditText LastName = (EditText) findViewById(R.id.lastname);
+        final EditText Address = (EditText) findViewById(R.id.address);
+        final EditText PhoneNumber = (EditText) findViewById(R.id.phone);
+        final EditText EmailAddress = (EditText) findViewById(R.id.email);
+        // importing button
+        Button B = (Button) findViewById(R.id.confirm);
+        //on button clicked
+        B.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View arg0) {
+                Intent goto_next_activity = new Intent(getApplicationContext(), UserProfile.class);
+                // setting to String
+                String fname = FirstName.getText().toString();
+                String lname = LastName.getText().toString();
+                String uaddress = Address.getText().toString();
+                String uphonenumber = PhoneNumber.getText().toString();
+                String uemailaddress = EmailAddress.getText().toString();
+
+                //passing variables via intent
+                Bundle b = new Bundle();
+                b.putString("UserFirst", fname);
+                b.putString("UserLast", lname);
+                b.putString("UserAddress", uaddress);
+                b.putString("UserPhone", uphonenumber);
+                b.putString("UserEmail", uemailaddress);
+
+                //Passing values through intent
+                goto_next_activity.putExtras(b);
+                startActivity(goto_next_activity);
+
+
+            }
+
+
+        });
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -50,8 +94,4 @@ public class MainForm extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-     public void anotherOne(View view) {
-        Button button = (Button) view;
-        startActivity(new Intent (getApplicationContext(),MainForm2.class));
-    }
 }
