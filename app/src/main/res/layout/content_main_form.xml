@@ -29,14 +29,14 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="0.13" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:id="@+id/firstName"
+            android:id="@+id/firstname"
             android:layout_gravity="right"
             android:hint="First Name" />
 
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:hint="Last Name"
             android:ems="10"
-            android:id="@+id/lastName"
+            android:id="@+id/lastname"
             android:layout_gravity="center_horizontal" />
 
         <EditText
@@ -120,7 +120,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText5"
+                android:id="@+id/month"
                 android:hint="MM"
                 android:layout_weight="1"
                 android:textAlignment="center" />
@@ -128,7 +128,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText7"
+                android:id="@+id/day"
                 android:hint="DD"
                 android:layout_weight="1"
                 android:textAlignment="center" />
@@ -136,7 +136,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText8"
+                android:id="@+id/year"
                 android:hint="YYYY"
                 android:layout_weight="1"
                 android:textAlignment="center" />
@@ -181,6 +181,14 @@
             android:layout_width="100dp"
             android:layout_height="20dp"
             android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:text="Confirm"
+            android:background="#123456"
+            android:textColor="#F5FAFA"
+            android:id="@+id/confirm" />
 
         <Button
             android:layout_width="77dp"
